@@ -5,20 +5,20 @@
 class Gocovsh < Formula
   desc "Go Coverage in your terminal: a tool for exploring Go Coverage reports from the command line"
   homepage "https://github.com/orlangure/gocovsh"
-  version "0.2.1"
+  version "0.3.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/orlangure/gocovsh/releases/download/v0.2.1/gocovsh_0.2.1_darwin_amd64.tar.gz"
-      sha256 "2185fc8543cebe32eafd0e808a30228c23a47d1c2bc76eb08053e4a8eab7bf70"
+      url "https://github.com/orlangure/gocovsh/releases/download/v0.3.0/gocovsh_0.3.0_darwin_amd64.tar.gz"
+      sha256 "c9040aedca310444b3ab73466b710c5c6fe464f9099f60c2493dd2b2893e5366"
 
       def install
         bin.install "gocovsh"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/orlangure/gocovsh/releases/download/v0.2.1/gocovsh_0.2.1_darwin_arm64.tar.gz"
-      sha256 "efb714dae1a66353845bd95cbc5d119dd6e965bc5cbbcb3304459394f2ff9945"
+      url "https://github.com/orlangure/gocovsh/releases/download/v0.3.0/gocovsh_0.3.0_darwin_arm64.tar.gz"
+      sha256 "d6931c481e045371e412a2d8ce7218fc33fa2ef770d279aac4f734f079d90467"
 
       def install
         bin.install "gocovsh"
@@ -27,17 +27,17 @@ class Gocovsh < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/orlangure/gocovsh/releases/download/v0.2.1/gocovsh_0.2.1_linux_amd64.tar.gz"
-      sha256 "fc47cf69b07396e2ce1f623e8af9304dcf9b5a70946353e75f6b3cf52fd4ae44"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/orlangure/gocovsh/releases/download/v0.3.0/gocovsh_0.3.0_linux_arm64.tar.gz"
+      sha256 "d46dd20a57bdc8648d53211a572d3ba2945f9b2a343db4078957f705d7327c8d"
 
       def install
         bin.install "gocovsh"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/orlangure/gocovsh/releases/download/v0.2.1/gocovsh_0.2.1_linux_arm64.tar.gz"
-      sha256 "79ed501a7e70bf65ed202016b1770d9b3a4e033edb20e0f42b52ca8d6eac83a3"
+    if Hardware::CPU.intel?
+      url "https://github.com/orlangure/gocovsh/releases/download/v0.3.0/gocovsh_0.3.0_linux_amd64.tar.gz"
+      sha256 "b5d98c90db770ecdd58578e9486f2126d5977079ff96c75101f1ad9e07af4a2f"
 
       def install
         bin.install "gocovsh"

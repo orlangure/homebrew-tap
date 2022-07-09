@@ -5,20 +5,20 @@
 class Gocovsh < Formula
   desc "Go Coverage in your terminal: a tool for exploring Go Coverage reports from the command line"
   homepage "https://github.com/orlangure/gocovsh"
-  version "0.5.0"
+  version "0.5.1"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/orlangure/gocovsh/releases/download/v0.5.0/gocovsh_0.5.0_darwin_arm64.tar.gz"
-      sha256 "794c4b4e3c96040a0e1f02afc57c5a3e71ff26e6b02a1f1103495aea8c769756"
+    if Hardware::CPU.intel?
+      url "https://github.com/orlangure/gocovsh/releases/download/v0.5.1/gocovsh_0.5.1_darwin_amd64.tar.gz"
+      sha256 "bda7db97d2bf4595df8c9f86734f9611350ca4d10d946c6e4605663ec244072a"
 
       def install
         bin.install "gocovsh"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/orlangure/gocovsh/releases/download/v0.5.0/gocovsh_0.5.0_darwin_amd64.tar.gz"
-      sha256 "98419a30cd8f0a313d5fb786a3aa131fee985c41a0758848db1ec036070ef248"
+    if Hardware::CPU.arm?
+      url "https://github.com/orlangure/gocovsh/releases/download/v0.5.1/gocovsh_0.5.1_darwin_arm64.tar.gz"
+      sha256 "990a4c04478f8e2478da7d37f7c875c6199f28f67ad8f3857f40086841530596"
 
       def install
         bin.install "gocovsh"
@@ -28,16 +28,16 @@ class Gocovsh < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/orlangure/gocovsh/releases/download/v0.5.0/gocovsh_0.5.0_linux_arm64.tar.gz"
-      sha256 "a1806947c727fe1b60912ea8f11a1cce0b60b7163a2f7f835f97508f4e355b1b"
+      url "https://github.com/orlangure/gocovsh/releases/download/v0.5.1/gocovsh_0.5.1_linux_arm64.tar.gz"
+      sha256 "7609d49747d903dafd77e4db5fe5514528e960b8630b674d19ae73ab6128caad"
 
       def install
         bin.install "gocovsh"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/orlangure/gocovsh/releases/download/v0.5.0/gocovsh_0.5.0_linux_amd64.tar.gz"
-      sha256 "eba4a65b15b8b9e460f8001fa1d884a72d4fcb54aaf360f5cee7f80848adc4c8"
+      url "https://github.com/orlangure/gocovsh/releases/download/v0.5.1/gocovsh_0.5.1_linux_amd64.tar.gz"
+      sha256 "1eed38a3d45cb4fa768fbdaf11e87d685f13cfb606495e6d7aa98f0f7ef6f104"
 
       def install
         bin.install "gocovsh"
